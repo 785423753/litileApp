@@ -1,0 +1,23 @@
+  <image class='bg' src='../images/result_bg.png'></image> 
+ <view class='content'> 
+      <swiper current="{{current}}" bindchange="currentChange" duration="500">
+      <block wx:for="{{star}}">
+        <swiper-item class="{{(clas == index)?'act':''}}" >
+          <image class='title' src="../images/{{item.name}}.png"></image>
+          <view  class='part'>
+               <image mode='widthFix' src="../images/{{item.img}}.png"/> 
+              <view  class='zw' wx:if="{{clas == index}}">
+                <text>我的{{item.name}}年龄</text>
+                <view class='age' wx:if="{{item.age > 0}}"><text>{{item.age}}</text>岁</view>
+                <view class='age' wx:if="{{item.age <= 0}}"><text style='font-size:40rpx;'>不满一岁</text></view>
+                <text >下一个{{item.name}}生日距今还有:</text>
+                <view class='age' style="margin-top:20rpx;"><text style='font-size:36rpx;'>{{item.burnth}}</text>天</view>
+              </view>        
+          </view>  
+        </swiper-item>
+      </block>
+    </swiper>  
+
+     <button bindtap='saveImg' class='share'>保存图片</button> 
+ </view>  
+<canvas  style="width: 414px;height:736px;" canvas-id='firstCanvas'></canvas>

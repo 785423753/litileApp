@@ -1,0 +1,40 @@
+<view class='content' wx:if="{{list}}">
+    <view class='list' wx:if="{{my}}" style='padding:20rpx 50rpx;'>
+          <view class='rank'>
+            <image wx:if="{{my.ranking < 4}}" src="../images/{{my.ranking}}.png"></image>
+            <block wx:else>
+              <text wx:if="{{my.ranking < 10}}">0{{my.ranking}}</text>
+              <text wx:if="{{my.ranking >= 10}}">{{my.ranking}}</text>
+            </block>
+            
+          </view>
+          <view class='avatar'><image src='{{my.avatar}}'></image></view>
+          <view class='name'>我</view>
+          <view class='cj'>
+            <text class='score'>{{my.level}}关</text>
+            <text class='time'>用时{{my.timecost}}</text>
+          </view>
+    </view>
+    <view class='box'>
+      <view>
+        <scroll-view scroll-y="true" bindscrolltolower="next">
+          <view class='list list_1' wx:for="{{list}}">
+                <view class='rank'>
+                  <image wx:if="{{item.ranking < 4}}" src="../images/{{item.ranking}}.png"></image>
+                  <block wx:else>
+                    <text wx:if="{{item.ranking < 10}}">0{{item.ranking}}</text>
+                    <text wx:if="{{item.ranking >= 10}}">{{item.ranking}}</text>
+                  </block>
+                  
+                </view>
+                <view class='avatar'><image src='{{item.avatar}}'></image></view>
+                <view class='name'>{{item.username}}</view>
+                <view class='cj'>
+                  <text class='score'>{{item.level}}关</text>
+                  <text class='time'>用时{{item.timecost}}</text>
+                </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+</view>

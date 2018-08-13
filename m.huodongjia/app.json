@@ -1,0 +1,59 @@
+{
+  "pages":[   
+    
+    "pages/index/index",
+    "pages/signup/signup",
+   "pages/discount/discount",
+    "pages/success/success",
+    "pages/event/event",
+    "pages/list/list",
+    "pages/order/order",
+    "pages/tag/tag",
+    "pages/kefu/kefu",
+    "pages/search/search",
+    "pages/orderDetail/orderDetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1474D8",
+    "navigationBarTitleText": "活动家",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#707070",
+    "selectedColor": "#1474D8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/home_1.png",
+        "selectedIconPath": "pages/images/home_2.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "精选",
+        "iconPath": "pages/images/list_1.png",
+        "selectedIconPath": "pages/images/list_2.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "pages/images/o3.png",
+        "selectedIconPath": "pages/images/o4.png"
+      },
+      {
+        "pagePath": "pages/kefu/kefu",
+        "text": "客服",
+        "iconPath": "pages/images/k3.png",
+        "selectedIconPath": "pages/images/k4.png"
+      }
+    ]
+  },
+  "widgets": [
+    {
+      "type": "search",
+      "path": "searchWidget"
+    }
+  ]
+}

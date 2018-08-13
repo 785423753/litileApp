@@ -1,0 +1,15 @@
+ <image mode="widthFix" class="logo" src="../images/logo.png"></image> 
+ <view bindtap='open' class='rule'>玩法介绍</view>
+<button  bindgetuserinfo="bindGetUserInfo" open-type='getUserInfo' class='start'>开始游戏</button>
+<navigator class='rank' url='../list/list'><image src='../images/icon_paihang.png'></image>查看排行榜</navigator>
+<button class='rank' open-type='share'><image src='../images/icon_share.png'></image>分享给好友</button>
+
+<view class='bg' wx:if="{{show_rule}}">
+  <view class='dialog'>
+    <view class='title_2'>玩法介绍</view>
+    <view class='text'>
+      游戏一开始点击新出现的圆即可过关直到你出现记忆错误为止。看你的大脑能闯过多少关！
+    </view> 
+    <button class='btn yel_btn' bindtap='close'>我知道了</button>
+  </view>
+</view>

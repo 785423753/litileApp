@@ -1,0 +1,142 @@
+/* pages/think/think.wxss */
+/**index.wxss**/
+.container{
+   width: 100%; 
+  min-height: 100vh; 
+  /* background: url(https://pic.huodongjia.com/static/images/niuniu/bg.jpg) no-repeat; */
+  /* background-size: 100% 100%;  */
+  font-size: 16px;
+  padding:20px 25px; 
+  position: relative;
+}
+.bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+ view,text{
+  position: relative;
+  z-index: 999;
+}
+.title{
+  display: block;
+  /* text-align: center; */
+  font-size: 18px;
+  color: #1A1A1A;
+  margin-top: 15px;
+  font-weight: 600;
+  padding: 0 5px;
+}
+.tip{
+  margin: 20px 0 30px;
+}
+.tip image{
+  width: 100%;
+}
+.tip textarea{
+  width: 90%;
+  height: 100;
+  /* background: #1E5152; */
+  margin:auto;
+  border-radius: 10px;
+   /* border: 2px solid #1A1A1A;  */
+  padding: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  margin-top: 20px;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.place{
+  color: #7A9899;
+}
+
+.btn{
+  width: 250px;
+  height: 50px;
+  margin: auto;
+  position: relative;
+  background: none;
+  /* border: 1px solid rgba(0,0,0,0); */
+}
+.btn image{
+  width: 100%;
+  position: absolute; 
+  top: 0;
+  left: 0;
+ 
+}
+.normal{
+  z-index: 1;
+}
+.act{
+  z-index: -1;
+}
+.btn:active .act{
+  z-index: 1;
+}
+.btn:active .normal{
+  z-index: -1;
+  /* display: none; */
+}
+
+.tips{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #0f2526;
+  opacity: .9;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+.tips image{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.wy{
+  padding: 10px;
+  margin-top: 20px;
+  color: #1A1A1A;
+  font-size: 15px;
+}
+.wy view{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.wy text{
+  display: block;
+  margin-top: 15px;
+  padding-left: 10px;
+}
+.tips{
+  position: relative;
+}
+.tip text{
+  font-size: 12px;
+  position: absolute;
+  bottom: 10px;
+  right: 10%;
+  color: #7A9899;
+}
+
+@media(max-width:320px){
+  .container{
+    padding: 10px;
+  }
+  .wy text{
+    margin-top: 10px;
+  }
+}

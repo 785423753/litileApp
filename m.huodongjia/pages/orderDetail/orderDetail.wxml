@@ -1,0 +1,29 @@
+<view wx:if="{{order.length > 0}}">
+<block wx:for="{{order}}">
+  <view class="order_list">
+  <view  class="order_num">
+    <text class="status" data-num="{{item.order_number}}" data-index="{{index}}" bindtap='repay' 
+    wx:if="{{item.order_status==0 && item.event_price_valid}}">去付款</text>
+
+    <text class="status" wx:if="{{item.order_status==0 && !item.event_price_valid}}">已过期</text>
+
+    <text class="status success" wx:if="{{item.order_status == 10}}">已付款</text>
+    <text class="status fail" wx:if="{{item.order_status == 30}}">已退款</text>
+    <text class="status free" wx:if="{{item.order_status == 40}}">免费票</text>
+    <text class="status" wx:if="{{item.order_status == 110}}">已失效</text>
+    
+    <text>姓名：{{item.order_user_name}}</text>
+    <text wx:if="{{item.order_status != 40}}">订单编号：{{item.order_number}}</text>
+    <text>订单创建时间：{{item.order_addtime}}</text>
+  </view>
+  <navigator url='../event/event?id={{item.event__old_event_id}}' class="order_name">{{item.event_name}}</navigator>
+  <view class="addr">{{item.city_title}}    {{item.event__begin_time}}</view>
+  <view class="state">
+  <text wx:if="{{item.order_status == 40}}">数量：1</text>
+  <text wx:else>数量：{{item.order_amount}}</text>
+  <text >总价：￥{{item.order_totalpay}}</text>
+  <view class="e_state" bindtap="tel"><image src="../images/phone.png"></image>联系客服</view>
+  </view>
+  </view>
+</block>
+</view>

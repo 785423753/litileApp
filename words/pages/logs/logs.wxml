@@ -1,0 +1,12 @@
+<!--logs.wxml-->
+<image class='logo' src='../images/bg2.png'></image>
+<view class='content' wx:if="{{w.length > 0}}">
+    <view  wx:if="{{_type == 1}}" class='title'>【{{word}}】造句结果如下：</view>
+    <view  wx:if="{{_type == 0}}" class='title'>【{{word}}】组词结果如下：</view>
+    <text wx:if="{{_type == 1}}"  class='sentence' wx:for="{{w}}">{{item}}</text>
+    <text wx:if="{{_type == 0}}"  wx:for="{{w}}">{{item}}</text>
+    <view class='share'>
+        <button bindtap='back'><image  bindtap='back' src='../images/icon_return.png'></image></button>
+        <button open-type='share'><image src='../images/icon_share.png'></image></button>
+    </view>
+</view>

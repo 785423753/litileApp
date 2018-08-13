@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/result/result",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#060E1F",
+    "navigationBarTitleText": "外星年龄计算",
+    "navigationBarTextStyle":"white"
+  }
+}

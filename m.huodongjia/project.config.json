@@ -1,0 +1,117 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.5.2",
+	"appid": "wx7f88573f18f0f247",
+	"projectname": "hdj",
+	"condition": {
+		"search": {
+			"current": 2,
+			"list": [
+				{
+					"id": 0,
+					"name": "demo",
+					"widgetData": "",
+					"service": {
+						"box_type": 10000,
+						"wording": "Demo",
+						"query_item": [
+							{
+								"query": "00700",
+								"box_qi": "{\"type\":10000,\"slot_list\":[{\"key\":\"stock_code\",\"value\":\"00700\"},{\"key\":\"stock_market\",\"value\":\"hk\"}]}"
+							},
+							{
+								"query": "腾讯股价",
+								"box_qi": "{\"type\":10000,\"slot_list\":[{\"key\":\"stock_code\",\"value\":\"00700\"},{\"key\":\"stock_market\",\"value\":\"hk\"}]}"
+							},
+							{
+								"query": "Goog",
+								"box_qi": "{\"type\":10000,\"slot_list\":[{\"key\":\"stock_code\",\"value\":\"GOOG\"},{\"key\":\"stock_market\",\"value\":\"us.OQ\"}]}"
+							}
+						]
+					},
+					"query": "00700",
+					"customQuery": "",
+					"boxQI": "{\"type\":10000,\"slot_list\":[{\"key\":\"stock_code\",\"value\":\"00700\"},{\"key\":\"stock_market\",\"value\":\"hk\"}]}",
+					"debugUrl": ""
+				},
+				{
+					"id": 1,
+					"name": "测试",
+					"widgetData": "",
+					"service": {
+						"box_type": 11065,
+						"wording": "会议查询",
+						"query_item": [
+							{
+								"query": "2018全球产品经理大会",
+								"box_qi": "{\"type\":11065,\"slot_list\":[{\"key\":\"conference_name\",\"value\":\"2018全球产品经理大会\"},{\"key\":\"gps_province\",\"value\":\"广东省\"},{\"key\":\"gps_city\",\"value\":\"广州市\"}]}"
+							},
+							{
+								"query": "北京区块链大会",
+								"box_qi": "{\"type\":11065,\"slot_list\":[{\"key\":\"industry_name\",\"value\":\"区块链\"},{\"key\":\"province\",\"value\":\"北京市\"},{\"key\":\"city\",\"value\":\"北京市\"},{\"key\":\"gps_province\",\"value\":\"广东省\"},{\"key\":\"gps_city\",\"value\":\"广州市\"}]}"
+							}
+						]
+					},
+					"query": "2018全球产品经理大会",
+					"customQuery": "2018全球区块链技术大会",
+					"boxQI": "{\"type\":11065,\"slot_list\":[{\"key\":\"conference_name\",\"value\":\"2018全球产品经理大会\"},{\"key\":\"gps_province\",\"value\":\"广东省\"},{\"key\":\"gps_city\",\"value\":\"广州市\"}]}",
+					"debugUrl": "http://123.59.86.52:7703/demo/"
+				},
+				{
+					"id": 2,
+					"name": "测试1",
+					"widgetData": "",
+					"service": {
+						"box_type": 11065,
+						"wording": "会议查询",
+						"query_item": [
+							{
+								"query": "2018全球产品经理大会",
+								"box_qi": "{\"type\":11065,\"slot_list\":[{\"key\":\"conference_name\",\"value\":\"2018全球产品经理大会\"},{\"key\":\"gps_province\",\"value\":\"广东省\"},{\"key\":\"gps_city\",\"value\":\"广州市\"}]}"
+							},
+							{
+								"query": "北京区块链大会",
+								"box_qi": "{\"type\":11065,\"slot_list\":[{\"key\":\"industry_name\",\"value\":\"区块链\"},{\"key\":\"province\",\"value\":\"北京市\"},{\"key\":\"city\",\"value\":\"北京市\"},{\"key\":\"gps_province\",\"value\":\"广东省\"},{\"key\":\"gps_city\",\"value\":\"广州市\"}]}"
+							}
+						]
+					},
+					"query": "北京区块链大会",
+					"customQuery": "",
+					"debugUrl": "http://123.59.86.52:7703/demo/",
+					"boxQI": "{\"type\":11065,\"slot_list\":[{\"key\":\"industry_name\",\"value\":\"区块链\"},{\"key\":\"province\",\"value\":\"北京市\"},{\"key\":\"city\",\"value\":\"北京市\"},{\"key\":\"gps_province\",\"value\":\"广东省\"},{\"key\":\"gps_city\",\"value\":\"广州市\"}]}"
+				}
+			]
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "测试",
+					"pathName": "pages/event/event",
+					"query": "id=539998927"
+				}
+			]
+		}
+	}
+}

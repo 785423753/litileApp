@@ -1,0 +1,115 @@
+.logo{
+  width: 185px;
+  margin: 50px auto 20px;
+  display: block;
+}
+.searh_form{
+  position: relative;
+  padding: 10px;
+  display: block;
+}
+.searh_form input{
+  width: 100%;
+  height: 35px;
+  color: #333;
+  font-size: 14px;
+  border: none;
+  background: #fff;
+  border-radius: 15px;
+  padding: 0 10px;
+}
+.searh_form button{
+   width: 22px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  z-index: 99;
+  background: none;
+  height: 35px;
+}
+button::after{
+  border: none;
+}
+.searh_form image{
+  width: 22px;
+  height: 22px;
+  position: relative;
+  right: 10px;
+  bottom: 2px;
+}
+.hot_tag{
+  font-size: 14px;
+  color: #999;
+  padding: 10px; 
+  padding-left: 80px;
+  position: relative;
+}
+.hot_tag .tag{
+   position: absolute;
+   left: 10px;
+}
+.hot_tag navigator,.tags navigator{
+  border:1px solid #999;
+  color: #999;
+  border-radius: 13px;
+  display: inline-block;
+  line-height: 22px;
+  padding: 0 8px;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.flex-item{
+  width: 25%;
+  text-align: center;
+  font-size: 10pt;
+  color: #7a7c7c;
+}
+.cat .flex-item{
+  display: inline-block;
+  padding: 5px 0;
+}
+.cat{
+  margin-bottom: 10px;
+  /* background: #fff; */
+  padding: 10px 0;
+}
+.cat image{
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin:0 auto 5px;
+}  
+
+.bg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 999;
+}
+.bg view{
+  width: 250px;
+  height: 360px;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: right;
+}
+.bg .hb{
+  width: 250px;
+  height: 322px;
+}
+.bg .close{
+  width: 30px;
+  height: 30px;
+  margin-bottom: 1px;
+  position: relative;
+  left: 15px;
+}

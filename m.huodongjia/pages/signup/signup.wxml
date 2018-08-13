@@ -1,0 +1,95 @@
+<view wx:if="{{current == 0}}">
+    <view wx:if="{{event}}" class="sign_top">
+        <view class='event_name'>{{event.event_name}}</view>
+          <view class='time'> <text>{{event.event_begin_time}}</text>  
+          <text>{{event.event_city_info[0].district_name}}</text> </view>   
+    </view>
+
+    <view class="sign_center">
+        <view bindtap='chooseTkt'  wx:for="{{event_price_unit}}" data-index="{{index}}"
+        data-property="{{item.property}}" data-id="{{item.id}}" data-price="{{item.price}}"
+        data-limit="{{item.limit_people}}"
+        class='ticket {{(index == _index) ? "active" : ""}}'>
+            <view class='tkt_name'>
+            {{item.property}}
+            <view wx:if="{{item.price != 0}}" class='changeNum'>
+                <view bindtap='sub' data-index="{{index}}">-</view>
+                <view class='num'>{{item.amount}}</view>
+                <view bindtap='add' data-index="{{index}}">+</view>
+            </view>
+            </view>
+            <view class='des'>{{item.content}}</view>
+            <view class='date'>截止时间：{{item.end_time}}   
+            <view class='price'>￥{{item.price}} <text class='amount'>× {{item.amount}}</text></view>
+            </view>
+        </view>
+    </view>
+
+    <form  report-submit="true" bindsubmit="next">
+        <button formType="submit" class='footer'>下一步</button>
+    </form>
+</view>
+<!-- 填写订单信息 -->
+<view  wx:if="{{current == 1}}">
+    <view class="sign_top">
+        <view class='event_name'>{{event.event_name}}</view>
+          <view class='time'> <text>{{info.property}}</text>  
+          <text>￥{{info.price}}×{{info.amount}}</text> </view>   
+    </view>
+
+    <view class='form'>
+      <view class='form_title'>
+          <view>联系人信息</view>
+          <text>多人参会客服会直接与您联系确认其他人参会信息</text>
+      </view>
+      <view class='line_before req'> <text>姓名</text> <input id="name" bindinput="bindKeyInput"></input></view>
+       <view class='line_before req'> <text>手机号</text> <input type='number' id="phone" bindinput="bindKeyInput"></input></view>
+        <view class='line_before req'> <text>邮箱</text> <input id="email" bindinput="bindKeyInput"></input></view>
+        <view class='line_before req'> <text>单位</text> <input id="company" bindinput="bindKeyInput"></input></view>
+       <view class='line_before req'> <text>职位</text> <input id="job" bindinput="bindKeyInput"></input></view>
+        <view class='line_before'> <text>备注</text> <textarea id="remark" bindinput='bindKeyInput' placeholder='如需发票请备注在此，报名成功后客服将与您联系。'></textarea></view>
+    
+    </view>
+      <view wx:if="{{event.is_coupon == 1}}" class='pay' style="padding-left:110px;"><text>活动家优惠码</text> 
+       <input placeholder='请输入手机号' type='number'  bindinput="bindKeyPhone"></input> 
+       </view>
+        <view wx:if="{{is_discount == 1}}" style="padding:10px 10px 0;font-size:14px;color:#4BA8EE;">已优惠{{discount}}元</view>
+    <view class='pay'> <text>支付方式</text>  <radio checked="{{true}}"/> <text class='wx'>微信</text> </view>
+    <view class='all'>应付总额 ：  <text>￥{{info.price * info.amount}}</text></view> 
+    <view class='post'>
+        <view class='order' bindtap='prev'>  
+          上一步
+        </view>
+        <form report-submit="true" bindsubmit="formSubmit">
+            <button  formType="submit" class='apply' >去付款</button> 
+        </form>
+        <!-- <view bindtap='post' class='apply'>去付款</view> -->
+    </view>
+     
+</view>
+<!-- 免费报名 -->
+<view  wx:if="{{current == 2}}">
+    <view class='form'>
+      <view class='form_title'>
+          <view>联系人信息</view>
+          <text wx:if="{{type == 1}}">注:免费票需审核并一人只限一张</text>
+      </view>
+      <view class='line_before req'> <text>姓名</text> <input id="name" bindinput="bindKeyInput"></input></view>
+       <view class='line_before req'> <text>手机号</text> <input id="phone" bindinput="bindKeyInput"></input></view>
+        <view class='line_before req'> <text>邮箱</text> <input id="email" bindinput="bindKeyInput"></input></view>
+        <view class='line_before req'> <text>单位</text> <input id="company" bindinput="bindKeyInput"></input></view>
+       <view class='line_before req'> <text>职位</text> <input id="job" bindinput="bindKeyInput"></input></view>    
+    </view>
+
+    <view wx:if="{{free}}" class='post'>
+        <view class='order' bindtap='prev'>  
+          上一步
+        </view>
+        <view bindtap='free' class='apply'>免费报名</view>
+    </view>
+    <view wx:else class='post'>
+          <view wx:if="{{type == 1}}"e bindtap='free' class='apply free'>免费报名</view>  
+         <view wx:if="{{type == 2}}"e bindtap='free' class='apply free'>立即咨询</view> 
+    </view>
+     
+</view>

@@ -1,0 +1,36 @@
+<image mode="widthFix" class="logo" src="../images/logo.png"></image>
+<form class='searh_form' bindsubmit='search'>
+  <input confirm-type='search' name='key' bindconfirm="enter" placeholder='输入关键字搜索'></input>
+  <button form-type='submit'><image mode="widthFix"  src='../images/search.png'></image></button>
+</form>
+
+<view class='hot_tag'>
+   <text  class='tag'>热门领域：</text>
+   <navigator wx:for="{{tags}}" url='../tag/tag?tag={{item.tag__id}}'>{{item.tag__name}}</navigator>
+   
+    <navigator url='../tag/tag?tag=2561'>互联网金融</navigator>
+</view>
+
+<view class="cat" wx:if='{{cat.length > 0}}'>
+    <block wx:for="{{cat}}">  
+      <view   bindtap='goto_cat' class="flex-item">
+      <image data-id="{{item.ename}}" src='https://pic.huodongjia.com/static/wap_img/{{item.ename}}.png'></image>
+      <text data-id="{{item.ename}}">{{item.name}}</text></view>
+    </block>
+</view>
+
+<view wx:if="{{show_coupon == 1}}" class='bg'>
+  <view>
+    <image bindtap="close" class='close' src='../images/icon_close.png'></image>
+    <image bindtap='getCoupon' class='hb' src='../images/img_hongbao.png'></image>
+  </view> 
+</view>
+<!-- <image data-url="https://pic.huodongjia.com/event/2018-02-26/1519637240.88.png!hdj123" bindtap='save' src='https://pic.huodongjia.com/event/2018-02-26/1519637240.88.png!hdj123'></image> -->
+
+
+
+
+
+
+
+

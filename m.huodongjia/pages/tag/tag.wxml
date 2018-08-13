@@ -1,0 +1,52 @@
+<scroll-view style='height:100vh' scroll-top='{{top}}' scroll-y='true' bindscroll='scroll' bindscrolltolower='lower' class='list'>
+<view class='tag_title' wx:if="{{tag_name}}">近期{{tag_name}}行业会议共{{events_cnt}}场，根据会议人气排序</view>
+<view class='tag_title' wx:if="{{events.length > 0 && tag_name == ''}}">共找到{{events.length}}场相关会议</view>
+ <view class='tag_title' wx:if="{{not}}">没有找到相关会议</view> 
+  <view wx:for="{{events}}" class='event line_before'>
+        <view class='img'>
+          <navigator url='../event/event?id={{item.event_id}}'>
+              <image mode="widthFix" wx:if="{{item.event_img[0].urls}}" 
+              src='{{item.event_img[0].server__name}}{{item.event_img[0].urls}}'></image> 
+              <image mode="widthFix" wx:else src='https://pic.huodongjia.com/static/images/event_default.jpg'></image>  
+          </navigator>
+        </view>
+        <view class='info'>
+          <navigator url='../event/event?id={{item.event_id}}' class='name'>{{item.event_name}}</navigator>
+          <view class='addr'> 
+            <text>{{item.event_begin_time}}</text> 
+              <navigator>{{item.event_city_info[0].district_name}}</navigator> 
+            <text class='timeout' wx:if="{{item.event_invalid}}">已结束</text>
+             <text class='timeout'  wx:elif="{{!item.event_price_valid}}">报名截止</text> 
+            <text class='price'  wx:else>￥{{item.event_price_unit[0].price}}</text>
+          </view>
+          <view class='tags'> 
+          <navigator  wx:for="{{item.event_tag_info}}" wx:for-item="tag"  url='../tag/tag?tag={{tag.id}}' open-type='redirect'>
+          {{tag.name}}</navigator>
+          </view>
+        </view>
+  </view>
+  <view class='loading'>
+    <image wx:if="{{next_page}}" mode="widthFix" src='https://pic.huodongjia.com/static/images/2222023L0-8.gif'></image>
+    <text wx:if="{{!next_page && events.length > 0}}">加载完成！</text>
+  </view>
+</scroll-view>
+<!-- <view class='top' bindtap='top_back' style='right:{{(s_top != 0) ? -20 : -85}}px'>回到顶部</view> -->
+
+  <view wx:if="{{height == 0}}" bindtap='openNav' class='shortcut nav'>快捷导航</view>
+  <view wx:if="{{height == 0}}" bindtap='top_back' class='shortcut'>回到顶部</view>
+  <view class='bg' catchtap='closeNav' style="display:{{(height == 0) ? 'none' : 'block' }}"></view>
+  <view class='short_nav' style='height:{{height}}px'>
+        <navigator url='../index/index' open-type='switchTab'>
+        <view><image src='../images/home_1.png'></image></view>
+          首页
+        </navigator>
+        <navigator url='../list/list' open-type='switchTab'>
+          <view><image src='../images/list_1.png'></image></view>
+          精选
+        </navigator>
+        <navigator url='../order/order' open-type='switchTab'>
+          <view><image src='../images/o3.png'></image></view>
+          订单
+        </navigator>
+        <view class='close' bindtap='closeNav'><image src='../images/close.png'></image></view>
+  </view>

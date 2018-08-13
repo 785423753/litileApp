@@ -1,0 +1,142 @@
+/**app.wxss**/
+view,input{
+  font-family: '微软雅黑';
+   box-sizing: border-box;
+}
+page{
+  background: #f5f5f5;
+}
+.line_before,.line_after{position: relative;}
+.line_before:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #cacaca;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    transform: scaleY(0.33);
+}
+.line_after::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #cacaca;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    transform: scaleY(0.33);
+}
+
+.event{
+  padding: 10px;
+  background: #fff;
+}
+.event view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.event .img{
+  width: 40%;
+  max-height: 100px;
+  overflow: hidden;
+}
+.img image{
+  width: 100%;
+  display: block;
+}
+.event .info{
+  width: 58%;
+  padding-left: 5px;
+}
+.name{
+    font-size: 16px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+.addr text,.addr navigator{
+    color: #666;
+    font-size: 14px;
+    display: inline;
+}
+.addr{
+  position: relative;
+  width: 100%;
+}
+.addr text{
+    padding-right: 20px;
+}
+.addr .price,.addr .timeout{
+    font-size: 16px;
+    color: red;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    padding: 0;
+}
+.addr .timeout{
+  color: #a3a3a3;
+}
+.event .tags{
+  height: 25px;
+   overflow: hidden; 
+  display: block;
+  margin-top: 10px;
+}
+.tags navigator,.tags text{
+  margin-bottom: 2px;
+  display: block;
+  float: left;
+  border: 1px solid rgba(75, 168, 238, 0.7);
+  color: #4BA8EE;
+  border-radius: 13px;
+  line-height: 22px;
+  padding: 0 8px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.loading{
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 0;
+}
+.loading image{
+  width: 30px;
+  margin: auto;
+  display: block;
+}
+.recom{
+  padding: 10px;
+  font-size: 14px;
+}
+
+.top{
+  width: 85px;
+  line-height: 25px;
+  position: fixed;
+  bottom: 50px;
+  right: -85px;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.58);
+  color: #fff;
+  font-size: 12px;
+  /* text-align: center; */
+  border-radius: 20px;
+  padding-left: 12px;
+  transition: all .2s linear; 
+}

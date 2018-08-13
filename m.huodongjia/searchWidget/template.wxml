@@ -1,0 +1,28 @@
+<view class="container" bindtap='{{openEvent}}'>
+  <view class="content">
+    <image class="img" src="{{event.image_url}}" data-id="2333"/>
+    <view class="info">
+      <text class="title">{{event.name}}</text>
+      <view class="items">
+        <text class="item-title">时间：</text>
+        <text class="price">{{event.time}}</text>
+      </view>
+      <view class="items">
+        <text class="item-title">地址：</text>
+        <text class="price">{{event.location}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="content-bottom" >
+    <view wx:if="{{linelist.length > 0}}" class="items-bottom" wx:for="{{linelist}}">
+      <view>
+        <text class="item-bottom-name" >{{item.title}}</text>
+      </view>
+      <text class="item-bottom-after">{{item.price}}元</text>
+    </view>
+    <view wx:if="{{linelist.length == 0}}" class="items-bottom">
+      <text class="item-bottom-name" >待定</text>
+    </view>
+  </view>
+  <!-- <text class="remain">还有8个结果，点击查看详情</text> -->
+</view>

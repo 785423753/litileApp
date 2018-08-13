@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+<image class='bg'  src='../images/bg.jpg'></image>
+    <image class='logo'  mode='widthFix' src='../images/img_people.png'></image>
+    <navigator  class='top' url='../think/think'>{{text}} <text> >> </text> </navigator>
+    <picker bindchange='pickChange' data-type="1" value="{{index_1}}" range="{{array_1}}" range-key="short_name">
+      <view class="picker">
+          <text wx:if="{{index_1 == ''}}">请选择所在省份</text>
+          {{array_1[index_1].short_name}}
+          <image src='../images/icon_arrow.png'></image>
+      </view>
+    </picker>
+    <picker bindchange='pickChange' data-type="2" value="{{index_2}}" range="{{array_2}}">
+      <view class="picker">
+          <text wx:if="{{index_2 == ''}}">请选择高考年份</text>
+          {{array_2[index_2]}}
+          <image src='../images/icon_arrow.png'></image>
+      </view>
+    </picker>
+    <picker bindchange='pickChange' data-type="0" value="{{index_0}}" range="{{array_0}}" range-key="name">
+      <view class="picker">
+          <text wx:if="{{index_0 == ''}}">请选择文理科</text>
+          {{array_0[index_0].name}}
+          <image src='../images/icon_arrow.png'></image>
+      </view>
+    </picker>
+
+    <view class='input'  bindtap="bindButtonTap">
+        <text>请输入高考分数</text>
+        <input focus="{{focus}}"  bindinput="inputChange" type='number' value='{{score}}'></input>
+    </view>
+
+    <button open-type='getUserInfo' class='btn' bindtap='post'>
+        <image class='normal' mode='widthFix' src='../images/btn1_normal.png'></image>
+        <image class='act' mode='widthFix' src='../images/btn1_press.png'></image>
+    </button>
+
+    <view class='tips' style='display:{{display}}'>
+        <image bindtap='close'  mode='widthFix' src='../images/img_tishi.png'></image>
+    </view>
+</view>

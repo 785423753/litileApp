@@ -1,0 +1,77 @@
+<view class="filter line_before">
+
+  <view class="section">
+    <picker bindchange="bindCityChange" value="{{city_index}}" range="{{city_arry}}" range-key="district_name" >
+      <view class="picker">
+        城市： <text>{{city_arry[city_index].district_name}}</text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="section date">
+    <picker bindchange="bindMonthChange" value="{{date_index}}" range="{{date_arry}}" range-key="name" >
+      <view class="picker">
+        时间：<text>{{date_arry[date_index].name}}</text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="section">
+    <picker bindchange="bindCatChange" value="{{cat_index}}" range="{{cat_arry}}" range-key="name" >
+      <view class="picker">
+        行业：<text>{{cat_arry[cat_index].name}}</text>
+      </view>
+    </picker>
+  </view>
+
+</view>
+
+<scroll-view style='height:{{height}}px' scroll-top='{{top}}' scroll-y='true' bindscroll='scroll' bindscrolltolower='lower' class='list'>
+
+<form class='searh_form line_before' bindsubmit='search'>
+  <input confirm-type='search' name='key' bindconfirm="enter" placeholder='输入关键字搜索'></input>
+  <button form-type='submit'><image mode="widthFix"  src='../images/search.png'></image></button>
+</form>
+
+ <view class='recom' wx:if="{{recom}}">暂无符合要求的会议，为您推荐相关会议</view>
+  <view wx:for="{{events}}" class='event line_before'>
+        <view class='img'>
+          <navigator url='../event/event?id={{item.event_id}}'>
+              <image mode="widthFix" wx:if="{{item.event_img[0].urls}}" 
+              src='{{item.event_img[0].server__name}}{{item.event_img[0].urls}}'></image> 
+              <image mode="widthFix" wx:else src='https://pic.huodongjia.com/static/images/event_default.jpg'></image>  
+          </navigator>
+        </view>
+        <view class='info'>
+          <navigator url='../event/event?id={{item.event_id}}' class='name'>{{item.event_name}}</navigator>
+          <view class='addr'> 
+            <text>{{item.event_begin_time}}</text> 
+            <text>{{item.event_city_info[0].district_name}}</text> 
+            <text class='timeout' wx:if="{{item.event_invalid}}">已结束</text>
+            <block wx:elif="{{item.event_price_type == 6}}">
+              <text class='timeout'  wx:if="{{!item.event_price_valid}}">报名截止</text> 
+              <text class='price'  wx:else>￥{{item.event_price_unit[0].price}}</text>
+            </block>
+             <block wx:elif="{{item.event_price_type == 4}}">
+            <text class='price'>免费报名</text> 
+            </block> 
+            <block wx:else>
+            <text class='price'>待定</text> 
+            </block>
+             
+          </view>
+          <view class='tags'> 
+          <navigator  wx:for="{{item.event_tag_info}}" wx:for-item="tag"  url='../tag/tag?tag={{tag.id}}'>{{tag.name}}</navigator>
+          </view>
+        </view>
+  </view>
+  
+  <view class='loading'>
+    <image wx:if="{{next_page}}" mode="widthFix" src='https://pic.huodongjia.com/static/images/2222023L0-8.gif'></image>
+    <text wx:if="{{!next_page && events.length > 0}}">加载完成！</text>
+  </view>
+</scroll-view>
+
+<view class='top' bindtap='top_back' style='right:{{(s_top != 0) ? -20 : -85}}px'>回到顶部</view>
+
+

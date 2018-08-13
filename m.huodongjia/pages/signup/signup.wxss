@@ -1,0 +1,245 @@
+page{
+  padding-bottom: 55px;
+}
+.sign_top{
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.sign_top .event_name{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.time{
+  font-size: 14px;
+  color: #666;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.time text{
+  display: block;
+}
+
+.sign_center{
+  padding:0 10px;
+}
+.ticket{
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding:5px 10px;
+  margin-bottom: 10px;
+  transition: all .3s linear;
+}
+.active{
+  border: 1px solid #4BA8EE;
+}
+.ticket>view{
+  padding: 10px 0;
+}
+.tkt_name{
+  font-size: 16px;
+  position: relative;
+}
+.des{
+  font-size: 14px;
+  color: #666;
+  border-top: 1px dashed #4BA8EE;
+  border-bottom: 1px dashed #4BA8EE;
+}
+.date{
+  font-size: 12px;
+  color: #999;
+  position: relative;
+}
+.price{
+  font-size: 18px;
+  font-weight: blod;
+  position: absolute;
+  right: 0;
+  top: 6px;
+}
+ .amount{display: none;} 
+.active .price{
+  color: #4BA8EE;
+}
+.active .amount{display: inline;}
+.changeNum{
+  display: inline-flex;
+  position: absolute;
+  right: 0;
+}
+.changeNum view{
+  width: 23px;
+  height: 23px;
+  border: 1px solid #999;
+  margin-left: 5px;
+  line-height: 20px;
+  text-align: center;
+  color: #999
+}
+.changeNum .num{
+  color: #333;
+  font-size: 12px;
+   line-height: 22px;
+}
+.changeNum .disable{
+  color: #eee;
+  border: 1px solid #eee;
+}
+
+.footer{
+  background: #4BA8EE;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 50px;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 1px 0 8px 2px rgb(238, 238, 238);
+  border-radius: 0px;
+}
+
+
+.form{
+  background: #fff;
+  padding: 0 10px;
+}
+.form .form_title{
+  padding: 10px 0;
+}
+.form_title view{
+  font-size: 16px;
+  padding: 0;
+}
+.form_title text{
+  font-size: 12px;
+  color: #999;
+}
+.form .line_before,.pay{
+  font-size: 14px;
+  color: #333;
+  padding: 5px 0;
+  padding-left: 80px;
+}
+.form input,.form textarea{
+  width: 100%;
+  height: 33px;
+  border: none;
+}
+.form textarea{
+  height: 80px;
+  padding: 5px 0;
+}
+.line_before text,.pay text{
+  position: absolute;
+  left: 0px;
+  top: 12px;
+}
+.pay text{
+  left: 10px;
+}
+.req text::after{
+  content: '*';
+  color: red;
+  position: absolute;
+  right: -8px;
+  top: 2px;
+}
+.pay{
+  background: #fff;
+  margin-top: 10px;
+  position: relative;
+  padding: 10px;
+  padding-left: 90px;
+}
+.pay .wx{
+  position: relative;
+  top: 2px;
+  left: 5px;
+}
+.post{
+  position: fixed;
+  background: #fff;
+  display: inline-flex;
+  width:100%;
+  bottom: 0;
+  left: 0;
+  box-shadow: 1px 0 8px 2px rgb(238, 238, 238);
+}
+.post form{
+  width: 50%;
+}
+.all{
+  background: #fff;
+  padding: 10px;
+  font-size: 14px;
+  color: #999;
+  margin-top: 10px;
+}
+.all text{
+  color: red;
+  font-size: 18px;
+  position: relative;
+  top: 2px;
+}
+.post>view{
+  width: 50%;
+}
+.apply{
+  background: #4BA8EE;
+  color: #fff;
+  line-height: 50px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 0;
+}
+.order{
+  font-size: 18px;
+  color: #4BA8EE;
+  text-align: center;
+  line-height: 50px;
+}
+.post>.free{
+  width: 100%;
+}
+.coupon{
+  color: #4BA8EE;
+  font-size: 14px;
+  text-align: right;
+  padding: 10px;
+}
+.coupon_form{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.coupon_form input{
+    border: 1px solid #d9d9d9;
+    outline: none;
+    height: 35px;
+    padding: 0 10px;
+    border-radius: 3px;
+    width: 200px;
+    font-size: 14px;
+    display: inline-block;
+    background: #fff;
+    text-align: left;
+}
+.coupon_form text{
+    height: 34px;
+    line-height: 34px;
+    border-radius: 3px;
+    margin-left: 10px;
+    width: 45px;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+    background: #999;
+    color: #fff;
+}
+.coupon_form  .sure{
+     background: #4BA8EE;
+}

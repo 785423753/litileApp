@@ -1,0 +1,90 @@
+<view class="banner"><image src="../images/img_bg.png" mode="widthFix"></image></view>
+<view class='content'>
+  <view wx:if="{{current == 0}}">
+      <view class='main'>
+        <image src='../images/logo_1.png' mode="widthFix"></image>
+        
+         <form  report-submit="true" bindsubmit="sub"> 
+           <view style="position:relative"> 
+             <button class='test_button' wx:if="{{is_show == 1}}" formType="submit"></button> 
+            <input  focus="{{focus}}" type='number' bindinput="bindKeyInput" placeholder='输入手机号，领取优惠券'></input>
+           </view>        
+         </form>   
+        <form report-submit="true" bindsubmit="post">
+          <button class='get' formType="submit">点击领取优惠券</button>
+        </form>
+         
+        <view class='line'><text>活动规则</text> <view></view></view>
+        <view class='rule'>1）用户填写手机号，即可获得9.5折小程序专属优惠码1张，该码最高优惠100元。</view> 
+        <view class='rule'>2）邀请好友填写手机号，用户与好友分别获得优惠码1张，多邀多得。</view> 
+        <view class='rule'>3）优惠码使用方法：通过填写的手机号，报名会议，将自动按9.5折优惠购买门票，您仅需输入手机号即可。</view> 
+        <view class='rule'>4）每次购买会议门票，仅可使用1张优惠码，且，仅有指定会议可使用本优惠码。</view> 
+        <view class='rule'>5）优惠码有效期至2018年12月31日。</view> 
+        <view class='rule'>6）活动家对本次活动规则保留最终解释权。</view> 
+      </view>
+      <view class='events'>
+          <view class='title'>活动专享</view>
+          <scroll-view style='height:100vh' scroll-top='{{top}}' scroll-y='true' bindscroll='scroll' bindscrolltolower='lower' class='list'>
+          <view wx:for="{{events}}" class='event line_before'>
+                <view class='img'>
+                  <navigator url='../event/event?id={{item.event_id}}'>
+                      <image mode="widthFix" wx:if="{{item.event_img[0].urls}}" 
+                      src='{{item.event_img[0].server__name}}{{item.event_img[0].urls}}'></image> 
+                      <image mode="widthFix" wx:else src='https://pic.huodongjia.com/static/images/event_default.jpg'></image>  
+                  </navigator>
+                </view>
+                <view class='info'>
+                  <navigator url='../event/event?id={{item.event_id}}' class='name'>{{item.event_name}}</navigator>
+                  <view class='addr'> 
+                    <text>{{item.event_begin_time}}</text> 
+                    <text>{{item.event_city_info[0].district_name}}</text> 
+                    <text class='timeout' wx:if="{{item.event_invalid}}">已结束</text>
+                    <block wx:elif="{{item.event_price_type == 6}}">
+                      <text class='timeout'  wx:if="{{!item.event_price_valid}}">报名截止</text> 
+                      <text class='price'  wx:else>￥{{item.event_price_unit[0].price}}</text>
+                    </block>
+                    <block wx:elif="{{item.event_price_type == 4}}">
+                    <text class='price'>免费报名</text> 
+                    </block> 
+                    <block wx:else>
+                    <text class='price'>待定</text> 
+                    </block>
+                    
+                  </view>
+                  <view class='tags'> 
+                  <navigator  wx:for="{{item.event_tag_info}}" wx:for-item="tag"  url='../tag/tag?tag={{tag.id}}'>{{tag.name}}</navigator>
+                  </view>
+                </view>
+          </view>
+  
+          <view class='loading'>
+            <image wx:if="{{next_page}}" mode="widthFix" src='https://pic.huodongjia.com/static/images/2222023L0-8.gif'></image>
+            <text wx:if="{{!next_page && events.length > 0}}">加载完成！</text>
+          </view>
+      </scroll-view>
+      </view>
+  </view>
+  <view wx:if="{{current == 1}}">
+      <view class='main'>
+        <image src='../images/logo_1.png' mode="widthFix"></image>
+        <view class='result'>恭喜您！成功领取95折优惠码，最高优惠100元</view>
+        <button bindtap='tolist' class='get' style="width:160px;margin-top:30px;">立即使用</button>
+        <view style="border-top:1px solid #E6E6E6;"></view>
+         <!-- <form  report-submit="true" bindsubmit="sub">  -->
+        <button class='share' formType="submit" open-type="share"><image mode='widthFix' style="width:100%;margin:30px 0 15px;" src='../images/img_yao.png'></image></button>
+         <!-- </form>         -->
+        <view style="color:#666;font-size:14px;line-height:25px;margin-bottom:20px;">注：邀请好友成功参加活动，您与好友均可获得优惠码，多邀多得</view>
+        <view wx:if="{{party_bs.length > 0}}" style="border-top:1px solid #E6E6E6;"></view>
+        <view class='yq' wx:if="{{party_bs.length > 0}}">
+            <view class='text'>恭喜你，已成功邀请<text>{{party_bs.length}}</text>位好友</view>
+            <view class='text'>获得<text>{{party_bs.length}}</text>张95折优惠码</view>
+            <view class='frends'>
+                <view wx:for="{{party_bs}}">
+                    <image src='{{item.avatarUrl}}'></image>
+                    <text>{{item.nick_name}}</text>
+                </view>
+            </view>
+        </view>
+      </view>
+  </view>
+</view>

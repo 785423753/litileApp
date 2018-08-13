@@ -1,0 +1,16 @@
+<view class="kf">
+<view>
+<contact-button 
+  session-from="weapp"
+  size="27"
+>
+</contact-button>
+<image src="../images/chat.png"></image>
+意见反馈
+</view>
+
+<view>
+  <view class="e_state" bindtap="tel"><image src="../images/phone_1.png"></image>联系客服</view>
+</view>
+
+</view>

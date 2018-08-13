@@ -1,0 +1,6 @@
+<view  wx:if="{{order.length == 0}}">
+<text class='title'>输入手机号或订单号查询订单</text>
+<input bindinput="bindKeyInput" class='phone' type='number' ></input>
+<button bindtap='post' class='search'>查询</button>
+</view>
+

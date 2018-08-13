@@ -1,0 +1,6 @@
+/**app.wxss**/
+view,input{
+  box-sizing: border-box;
+  position: relative;
+  z-index: 99;
+}

@@ -1,0 +1,23 @@
+<!-- 支付成功 -->
+<view wx:if="{{current == 0}}" class='success'>
+  <text style="position:relative;top:-15px;left:5px;font-size:20px;">支付成功！</text>
+  <view style="font-size:14px;color:#999;margin-top:20px">
+    <view>我们会在1个工作日内与您确认参会人信息 </view>
+    参会凭证等事宜，请耐心等待
+  </view>
+  <view class='order_info'>
+      <view>商品名称  <text>{{order.event_name}}</text></view>
+      <view>支付金额  <text>￥{{order.order_totalpay}}</text></view>
+      <view>联系人  <text>{{order.order_user_name}}</text></view>
+      <view>联系电话  <text>{{order.order_tel}}</text></view>
+  </view>
+ <!-- <view style="margin-top:20px;color:#FF9933" bindtap='get_order'>查看订单</view> -->
+    <text bindtap='shareNext' class='share'>分享给好友 订单的5%归你</text>
+</view>
+<!-- 分享截图 -->
+<view  wx:if="{{current == 1}}" class='share_img'>
+    <text>分享给好友，订单的5%归你</text>
+    <image bindtap='pre' mode='widthFix' src='{{share_img}}'></image>
+    <button bindtap='save'>保存到手机</button>
+    <text bindtap='get_order' class='getorder'>查看订单</text>
+</view> 

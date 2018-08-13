@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#46ABC9",
+    "navigationBarTitleText": "组词造句",
+    "navigationBarTextStyle":"black"
+  }
+}

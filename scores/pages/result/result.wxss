@@ -1,0 +1,78 @@
+/* pages/result/result.wxss */
+canvas{
+    position: absolute;  
+       right: 100%;           
+  
+}
+.result{
+  width: 100%;
+  height: 100vh;
+  padding: 25px 0;
+}
+.bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.tz{
+  width: 300px;
+  margin: 25px auto;
+}
+.tz image{
+  width: 100%;
+}
+.name{
+  position: absolute;
+  right: 70px;
+  top: 55px;
+  color: #1A1A1A;
+  width: 33px;
+  font-size: 18px;
+}
+.school{
+  position: absolute;
+  right: 145px;
+  top: 55px;
+  color: #E61700;
+  width: 33px;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.footer{
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background: #000;
+  opacity: .9;
+  color: #fff;
+  z-index: 99;
+  bottom: 0;
+}
+.footer image{
+  width: 50px;
+  height: 50px;
+}
+.footer text{
+  display: inline-block;
+  line-height: 100px;
+  font-size: 15px;
+  padding: 0 10px;
+}
+.footer button{
+  display: inline-block;
+  width: 100px;
+  background: none;
+  height: 50px;
+  position: relative;
+   top: 20px; 
+}
+.logo{
+  position: absolute;
+  font-size: 18px;
+  right: 37px;
+  top: 90px;
+  width: 20px;
+}

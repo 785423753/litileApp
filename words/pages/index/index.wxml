@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class='content'>
+  <image class='logo' src='../images/logo.png'></image>
+  <view class='search'>
+      <image src='../images/icon_search.png'></image>
+      <input bindinput="bindKeyInput" value='{{word}}' class='input' placeholder-style="color:#A1AEB3" placeholder='请输入关键字'></input>
+  </view>
+  <button disabled='{{disable}}' class='btn_0' bindtap='toDetail' data-type="1">我要造句</button>
+  <button disabled='{{disable}}'  class='btn_1' bindtap='toDetail' data-type="0">我要组词</button>
+
+  <view wx:if="{{history.length>0}}" class='history'><image src='../images/icon_lishi.png'></image> 搜索历史</view>
+  <text wx:for="{{history}}" class='word' bindtap='search' data-text="{{item}}" wx:if="{{item && index < 6}}">{{item}}</text>
+  <image class='bg' mode='widthFix' src='../images/bg1.png'></image>
+</view> 

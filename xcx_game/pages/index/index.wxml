@@ -1,0 +1,102 @@
+<!--index.wxml-->
+ <movable-area style="height: 100vh;width: 100vw;background:#eee">
+   <movable-view direction="all"  y="{{height-60}}" wx:if="{{!error}}">
+   <image wx:if="{{eye}}" src='../images/btn2.png' bindtap='pass'></image>
+   <image wx:else src='../images/btn1.png' bindtap='open'></image>
+  </movable-view>
+
+  <view class='time'>
+  <text wx:if="{{h<10}}">0{{h}}</text><text wx:if="{{h>=10}}">{{h}}</text>:<text wx:if="{{min<10}}">0{{min}}</text><text wx:if="{{min>=10}}">{{min}}</text>:<text wx:if="{{m<10}}">0{{m}}</text><text wx:if="{{m>=10}}">{{m}}</text>
+
+  </view>
+  <view class='content'>
+       <text  wx:for="{{ball}}" class='ball {{(act && index == (ball.length-1))?"act":""}}' bindtap='choose' data-index="{{index}}"
+      style='height:{{item.r*2}}px;width:{{item.r*2}}px;top:{{item.y-item.r}}px;left:{{item.x-item.r}}px;'></text> 
+  </view> 
+  <view class='score' style='left:{{left}};transition:all {{time}}s linear'>
+      <view class='fail'    wx:if="{{error}}">
+            <image class='bg' mode='widthFix' src='../images/bg.png'></image>
+            <view class='nr'>
+              <image class='avatar' src='{{info.avatarUrl}}'></image> 
+              <text style='font-size:24rpx;'>本次通关</text>
+              <view class='level'><image src='../images/bg2.png'></image>
+              <text wx:if="{{!tongguan}}">{{score-1}}关</text> 
+              <text wx:if="{{tongguan}}" style='font-weight:500;'>成功通关</text>
+              </view>
+              <navigator wx:if="{{!tongguan}}" url='../list/list' class='myrank'>查看排名</navigator> 
+              <view class='myrank' wx:if="{{tongguan}}">你是第一位成功通关的童鞋</view>
+              <view class='des' wx:if="{{!tongguan}}">不错哦，请继续加油！ <text>快看看你的记忆哪里出错了</text></view>  
+              <block wx:if="{{!tongguan}}">
+                <image class='img' mode='widthFix'  src='{{img2}}'></image> 
+                <image class='img' mode='widthFix'  src='{{img1}}'></image>  
+              </block> 
+              <view class='tg' wx:if="{{tongguan}}">
+                  <image mode='widthFix' src='../images/bg4.png'></image>
+                  <text class='nickName'>{{info.nickName}}</text>
+                  <text>在记忆力训练大作战中成功通关，经专家审委员会评定，特授予荣誉证书！</text>
+                  <text class='date'>{{date}}</text>
+              </view>
+              <view class='bottom'>
+                  <view bindtap='restart'>
+                      <button>
+                        <image class='normal' src='../images/btn_return_normal.png'></image>
+                        <image class='press' src='../images/btn_return_press.png'></image>
+                      </button>
+                      <text>再试一次</text>
+                  </view>
+                  <view>
+                      <button open-type='share'>
+                        <image class='normal' src='../images/btn_add_normal.png'></image>
+                        <image class='press' src='../images/btn_add_press.png'></image>
+                      </button>
+                      <text wx:if="{{!tongguan}}">立即复活</text>
+                      <text wx:if="{{tongguan}}">邀请好友</text>
+                  </view>
+                  <view bindtap='savePic'>
+                      <button>
+                        <image class='normal' src='../images/btn_share_normal.png'></image>
+                        <image class='press' src='../images/btn_share_press.png'></image>
+                      </button>
+                      <text>保存分享图</text>
+                  </view>
+              </view> 
+            </view>
+      </view> 
+      <view class='fail_1' wx:if="{{0}}">
+            <image class='tips' mode='widthFix' src='../images/tishi.png'></image>
+            <view bindtap='restart'>
+                <image src='../images/btn_return_normal.png'></image>
+                <text>再试一次</text>
+            </view>
+            <view bindtap='toIndex'>
+                <image src='../images/btn_home_normal.png'></image>
+                <text>回到首页</text>
+            </view>
+      </view> 
+      <view class='next' wx:if="{{!error && start}}">
+        <text>第{{score}}关</text>
+      </view>
+  </view> 
+
+<view class='bg' wx:if="{{show_rule}}">
+  <view class='dialog'>
+    <view class='title_2'>道具说明</view>
+    <view class='text'>
+      我们将每天随机抽取5 位分享游戏的幸运玩家，获得“火眼金睛”道具。分享群越多获得道具的机率就越大。在游戏界面可以使用此道具完成通关并获得记忆大师证书。
+    </view> 
+    <image bindtap='close' class='close' src='../images/icon_close.png'></image>
+    <button class='btn yel_btn' open-type='share' id="dj">分享到微信群</button>
+  </view>
+</view>  
+<view class='prop' wx:if="{{show_prop}}">
+    <image wx:if="{{eye}}" mode='widthFix' src='../images/img_tishi.png'></image>
+    <image wx:if="{{!eye}}"  mode='widthFix' src='../images/img_tishi2.png'></image>
+    <button bindtap='close'>继续游戏</button>
+</view>
+</movable-area>  
+
+
+
+<canvas  canvas-id='myCanvas'></canvas>
+<canvas  canvas-id='myCanvas1'></canvas>
+ <canvas class='canvas'  canvas-id='myCanvas2'></canvas> 

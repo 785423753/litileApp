@@ -1,0 +1,24 @@
+<!--logs.wxml-->
+
+<canvas  style="width: 414px;height:736px;" canvas-id='firstCanvas'></canvas>
+
+
+ <view class='footer'>
+  <text>分享到：</text>
+    <button open-type="share"><image src='../images/icon_wechat_normal.png'></image></button>
+  <button bindtap='saveImg'><image src='../images/icon_friends_normal.png'></image></button>
+</view>
+  <view class='result'>
+  <image src='../images/bg2.jpg'></image>
+  <view class='title title_1'><text>{{user.nickName}}</text></view>
+  <view class='title title_2'>在{{data.year}}年{{data.city}}高考中获得</view>
+  <view class='h1'>{{data.rank}}</view>
+  <view class='title'>打败了<text>{{data.per}}%</text>的同学</view>
+  <view class='black'>
+    <image  src='../images/img_blackboard.png'></image>
+    <text>{{text[0]}}</text>
+     <text>{{text[1]}}</text> 
+  </view>
+</view>   
+
+

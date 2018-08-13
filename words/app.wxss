@@ -1,0 +1,10 @@
+/**app.wxss**/
+page{
+  background: #46ABC9;
+}
+view,input,button,text{
+  box-sizing: border-box;
+}
+button::after{
+  border: none;
+}

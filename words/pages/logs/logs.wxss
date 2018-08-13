@@ -1,0 +1,65 @@
+.content{
+  padding: 32rpx 40rpx;
+  position: relative;
+  z-index: 99;
+}
+.logo{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 220rpx;
+  height: 220rpx;
+  z-index: 1;
+}
+.title{
+  color: #1A1A1A;
+  font-size: 40rpx;
+  margin-bottom: 40rpx;
+}
+.content text{
+  width: auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #3A90A9;
+  text-align: center;
+  color: #FFF;
+  font-size: 32rpx;
+  display: inline-block;
+  margin:0 10rpx;
+  margin-bottom: 20rpx;
+  border-radius: 2px;
+  padding: 0 40rpx;
+}
+.content .sentence{
+  display: block;
+  margin: 0 0 20rpx;
+  width: 100%;
+  height: auto;
+  padding: 30rpx;
+  line-height: 23px;
+  text-align: left;
+}
+.share{
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 100rpx;
+}
+.share button{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+  background: #C2E7F2;
+  padding: 36rpx;
+  display: inline-block;
+  margin: 0 60rpx;
+  box-shadow: 0 0 10px 0 rgba(62, 152, 179, 0.527);
+}
+.share image{
+  width: 48rpx;
+  height: 48rpx;
+}

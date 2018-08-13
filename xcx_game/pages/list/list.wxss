@@ -1,0 +1,74 @@
+/* pages/list/list.wxss */
+.content{
+  background: #203561;
+  height: 100vh;
+}
+scroll-view{
+  max-height: 87vh;  
+}
+.box{
+  padding: 30rpx;
+}
+.box>view{
+  border-radius: 3px;
+  overflow: hidden;
+  max-height: 87vh;  
+  position: relative;
+}
+.list{
+  background: #fff;
+}
+.content .list_1:nth-child(odd){
+  background: #FFF;
+}
+.content .list_1:nth-child(even){
+  background: #F5F6FA;
+}
+.list{
+  padding: 20rpx;
+}
+.list view{
+  display: inline-block;
+  vertical-align: middle;
+  color: #333;
+}
+.rank image{
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+}
+.rank text{
+  color: #999999;
+  font-size: 30rpx;
+  display: block;
+  width: 60rpx;
+  text-align: center;
+}
+.avatar image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 100%;
+  display: block;
+  margin:0 30rpx;
+}
+.name{
+  font-size: 30rpx;
+  max-width: 350rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.score{
+  font-size: 28rpx;
+  display: block;
+  font-weight: 600;
+}
+.time{
+  color: #999;
+  font-size: 20rpx;
+  display: block;
+}
+.cj{
+  float: right;
+  text-align: right;
+}

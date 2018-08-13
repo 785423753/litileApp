@@ -1,0 +1,14 @@
+<!--logs.wxml-->
+<image class='bg' src='../images/home_bg.png'></image>
+<view class='model'>
+    <text>关于星球年龄</text>
+    按照小学的天文常识可知，一个星球自
+    转一周为该星球的一天，而围绕太阳转
+    一周称为公转即该星球的一年。因为每
+    个星球离太阳的距离都不一样，所以自
+    转和公转的周期都不一样，因此在不同
+    的星球就会有不同的年龄；一日不见如
+    隔三秋。这里的数据都是从天文网站获
+    取，绝对科学和正确。
+    <navigator open-type='navigateBack'>朕已阅</navigator>
+</view>

@@ -1,0 +1,65 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+view,text,scroll-view{
+  box-sizing: border-box;
+}
+button::after{
+  border: none;
+}
+.bg{
+  background: rgba(32,53,97,.9);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  z-index: 99;
+}
+.dialog{
+  width: 600rpx;
+  height: 600rpx;
+  padding: 60rpx 46rpx; 
+  background: #fff;
+  border-radius:20rpx;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+}
+.title_2{
+  text-align: center;
+  color: #203561;
+  font-size: 36rpx;
+  font-weight: 600;
+  margin-bottom: 35rpx;
+}
+.text{
+  color: #4D5D80;
+  font-size: 30rpx;
+  line-height: 25px;
+  text-align: left;
+}
+.dialog button{
+  width: 480rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #FF7D45;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 32rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 30rpx;
+}

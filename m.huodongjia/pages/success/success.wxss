@@ -1,0 +1,58 @@
+/* pages/success/success.wxss */
+page{
+  background: #fff;
+}
+.success{
+  text-align: center;
+  margin-top: 50px;
+}
+.order_info{
+  background: #f5f5f5;
+  padding: 10px;
+  color: #666;
+  font-size: 14px;
+  margin: 20px 0;
+}
+.order_info view{
+  text-align: left;
+  line-height: 30px;
+}
+.order_info text{
+  float: right;
+}
+.share{
+  color: #3D8ECC;
+  text-decoration: underline;
+  font-size:16px;
+}
+
+
+.share_img text{
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+  color: #666;
+  font-size: 14px;
+}
+.share_img image{
+   width: 70%;
+   margin:0 auto 30px;
+   display: block;
+   box-shadow: 0 7px 25px 1px rgba(148, 148, 148, 0.4);
+}
+.share_img button{
+    width:180px;
+    height:40px; 
+    color: #fff;
+    background: #4BA7EE;
+    margin:auto;
+    font-size: 14px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0 rgba(0,0,0,0.2) ;
+    border:none;
+    line-height: 40px;
+}
+.share_img .getorder{
+  color: #999;
+  text-decoration: underline;
+}

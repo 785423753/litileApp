@@ -1,0 +1,22 @@
+{
+  "pages":[  
+    
+    "pages/base/base",
+    "pages/index/index",
+    "pages/result/result",
+    "pages/test/test",
+    
+    "pages/pic/pic",
+   "pages/think/think",
+    
+    
+    "pages/logs/logs"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "一起来高考",
+    "navigationBarTextStyle":"black"
+  }
+}

@@ -1,0 +1,17 @@
+<view class='content'>
+  <image class='bg' src='../images/bg.jpg'></image>
+  <image class='logo'  mode='widthFix' src='../images/img_people.png'></image>
+  <image class='logo1'  mode='widthFix' src='../images/title.png'></image>
+  <navigator url='../test/test' class='btn'>
+      <image class='normal' mode='widthFix' src='../images/index_btn1_normal.png'></image>
+      <image class='act' mode='widthFix' src='../images/index_btn1_press.png'></image>
+  </navigator>
+  <navigator url='../index/index' class='btn'>
+      <image class='normal' mode='widthFix' src='../images/index_btn2_normal.png'></image>
+      <image class='act' mode='widthFix' src='../images/index_btn2_press.png'></image>
+  </navigator>
+  <navigator url='../think/think' class='btn'>
+      <image class='normal' mode='widthFix' src='../images/index_btn3_normal.png'></image>
+      <image class='act' mode='widthFix' src='../images/index_btn3_press.png'></image>
+  </navigator>
+</view>

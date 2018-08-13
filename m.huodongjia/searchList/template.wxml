@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="items">
+    <view class="item" wx:for="{{list}}" wx:if="{{index<2}}" bindTap="{{openevent}}">
+      <image class="img" src="{{item.image_url}}" data-id="{{index}}"/>
+      <view class="info">
+        <view class="info-header">
+          <text class="info-title" data-id="{{index}}">{{item.name}}</text>
+          <view wx:if="{{item.price}}">
+            <text class="price" data-id="{{index}}">{{item.price}}</text>
+            <text class="info-after" data-id="{{index}}">元起</text>
+          </view>
+          <view wx:else>
+          <text class="info-after" data-id="{{index}}">待定</text>
+          </view>
+        </view>
+        <text class="info-detail" data-id="{{index}}">{{item.time}}</text>
+        <text class="info-detail" data-id="{{index}}">{{item.location}}</text>
+      </view>
+    </view>
+  </view>
+  <text class="remain" bindtap="{{openapp}}">还有{{list.length-2}}条结果，点击查看</text>
+</view>

@@ -1,0 +1,27 @@
+<!--index.wxml-->
+
+<view class='content'>
+<image class='bg' src='../images/home_bg.png'></image>
+  <view style='position:relative;z-index:99'>
+      <view class='rule'>根据自传和公转的周期不同，我们在各星球上的年龄也不一样哦，想知道你在其他星球上的年龄吗？快来测试一下吧！</view>
+        <!-- <image class='logo' src='../images/logo.png'></image> -->
+        <!-- <navigator url='../logs/logs' class='get_rule'>了解一下 <image src='../images/icon_right.png'></image></navigator> -->
+        <picker mode="date" value="{{date}}" end="2018-06-01" bindchange="bindDateChange">
+          <view class="picker">
+            <text wx:if="{{date == ''}}">选择阳历生日开始计算</text>{{date}}
+            <image src='../images/icon_down.png'></image>
+          </view>
+        </picker>
+        <button  bindtap='post' open-type='getUserInfo'>查看结果</button>
+
+        <view class='star' wx:for="{{star}}">
+            <image src="../images/star/{{item.img}}.png" class="slide-image"/>
+            <view class='nr'>
+                <text>{{item.name}}</text>
+                <text class='white'>自转周期{{item.rotation}}天</text>
+                <text class='white'>公转周期{{item.revolution}}天</text>
+            </view>
+        </view>  
+  </view>
+    
+</view>

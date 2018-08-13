@@ -1,0 +1,58 @@
+/* pages/base/base.wxss */
+page{
+  background: #203561;
+  text-align: center;
+}
+.rule{
+  width: 150rpx;
+  height: 48rpx;
+  background: #1A1A1A;
+  color: #FFF;
+  font-size: 28rpx;
+  position: absolute;
+  right: 0;
+  top: 60rpx;
+  border-top-left-radius: 25rpx;
+  border-bottom-left-radius: 25rpx;
+  text-align: center;
+  padding-top: 2px;
+  padding-left: 5px;
+  opacity: .8;
+}
+.logo{
+  width: 500rpx;
+  margin: 200rpx auto 0;
+  display: block;
+}
+.start{
+  width: 320rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  background: #fff;
+  border-radius: 40px;
+  color: #203561;
+  font-size: 36rpx;
+  text-align: center;
+  margin:300rpx auto 0;
+}
+.start:active{
+  background: #B8C5E3;
+}
+.rank{
+  color: #B8C5E3;
+  font-size: 32rpx;
+  margin: 80rpx 20rpx 0;
+  text-align: center;
+  display: inline-block;
+  background: none;
+  line-height: inherit;
+  vertical-align: top;
+}
+.rank image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
+

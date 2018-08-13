@@ -1,0 +1,198 @@
+<!-- <import src="../../wxParse/wxParse.wxml"/>  -->
+
+
+<view wx:if="{id != ''}}">
+<web-view  wx:if="{id}}" src="{{src}}"></web-view>
+</view>
+
+
+
+
+
+
+
+
+
+ <scroll-view wx:if="{{event.event_name}}" scroll-top='{{top}}' scroll-y='true' bindscroll='scroll' > 
+
+<view class='fixed'>
+  <view class='tab line_after'>
+    <text bindtap='tabChange' wx:for="{{title}}" class="{{(tab_index == index) ? 'active' : ''}}" 
+    wx:if="{{title}}" data-index="{{index}}">{{item}}</text>
+  </view>
+</view>
+
+
+
+  <block wx:if="{{replyTemArray}}" wx:for="{{replyTemArray}}">
+    <view data-index="{{index}}" class='event_content {{(tab_index == index) ? "active" : ""}}'>
+    <view wx:if="{{index == 0}}" style='background:#f5f5f5;padding-bottom:10px;'>
+        <image wx:if="{{event.event_img.length > 0}}" mode="widthFix" class="banner" 
+      src="https://pic.huodongjia.com/{{event.event_img[0].urls}}"></image>
+      <image wx:else mode="widthFix" class="banner" src="https://pic.huodongjia.com/static/images/event_default.jpg"></image>
+        <view class='event_info'>
+          <view class='event_name'>{{event.event_name}}</view>
+          <view class='info_p'>
+          <image mode="widthFix" src="https://pic.huodongjia.com/static/wap_img/shijian@2x.png" />
+          {{event.event_begin_time}}  至  {{event.event_end_time}}
+          </view>
+          <view class='info_p'>
+          <image mode="widthFix" src="https://pic.huodongjia.com/static/wap_img/dizhi@2x.png" />
+          {{event.event_city_info[0].district_name}}  
+            {{event.event_venue_info[0].title}}
+          </view>
+          <view class='info_p'>
+          <image mode="widthFix" src="https://pic.huodongjia.com/static/wap_img/zhubanfang@2x.png" />
+          <block wx:for="{{event.event_sponsor}}">{{item.ns_name}}</block>
+          </view>
+          <view class='info_p scale' wx:if="{{event.event_scale}}">
+          <image mode="widthFix" src="https://pic.huodongjia.com/static/wap_img/guimo.png" />
+          {{event.event_scale}}
+          </view>
+      </view>
+
+      <view class='other' wx:if="{{event.event_price_type == 6}}">
+        <view>
+          <block wx:if='{{event.ticketandinvoice}}'>
+              发票开具：
+              <block wx:if='{{event.ticketandinvoice.is_invoice}}'>
+                <block wx:for='{{event.ticketandinvoice.invoice_type}}'>{{item}}  </block>
+              </block>
+              <block wx:else>本次会议为非营利性活动，不支持开具发票，敬请谅解</block>
+          </block>
+          <block wx:else>增值税普通发票    增值税专用发票</block>
+        </view>
+        <view wx:if='{{event.ticketandinvoice.invoice_send_type}}'>
+            领取方式：<block wx:for='{{event.ticketandinvoice.invoice_send_type}}'>{{item}}   </block>
+        </view>
+        <view wx:if='{{event.ticketandinvoice.invoice_content}}'>
+            发票内容：<block wx:for='{{event.ticketandinvoice.invoice_content}}'>{{item}}   </block>
+        </view>
+        <view wx:if='{{event.ticketandinvoice.ticket_type}}'>
+            参会凭证：<block wx:for='{{event.ticketandinvoice.ticket_type}}'>{{item}}   </block>
+        </view>
+        <view>
+          <block wx:if='{{event.ticketandinvoice}}'>
+              发票开具：
+              <block wx:if='{{event.ticketandinvoice.is_refund}}'>
+                  支持退款   
+                  <block wx:if='{{event.ticketandinvoice.refund}}'>{{event.ticketandinvoice.refund}}</block>
+                  <block wx:else>退款时将收取票价的10%作为手续费。</block>
+              </block>
+              <block wx:else>不支持退款   {{event.ticketandinvoice.refund}}</block>
+          </block>
+          <block wx:else>支持退款，退款时将收取票价的10%作为手续费。</block>
+        </view>
+      </view>
+
+      <view wx:if="{{youhui.length > 0 && event.event_price_type == 6}}" class='other youhui'>
+      <view>优惠信息</view>
+        <navigator wx:for="{{youhui}}" wx:if="{{item.original_price}}" url='../signup/signup?title={{event.event_id}}&type=0'>
+          {{item.end_time}}前，{{item.property}}优惠价￥{{item.price}}，原价￥{{item.original_price}} 
+        </navigator>
+      </view>
+
+      <view wx:if="{{event.companines.length > 0}}" class='other company'>
+      <text>参会单位:</text>
+        <view wx:for="{{event.companines}}">
+          {{item.invoice_head}}
+        </view>
+      </view>
+    </view>
+        
+        <view  wx:if="{{title[index]=='会议嘉宾'}}" class='article'>
+              <view wx:if="{{event.event_guest.length > 0}}" class="guess">         
+                    <view wx:for="{{event.event_guest}}" class="flex-item">
+                        <image wx:if="{{item.img__urls}}" src="https://pic.huodongjia.com/{{item.img__urls}}"></image>
+                        <image wx:else src="https://pic.huodongjia.com/static/images/guest_default(1).jpg"></image>
+                        <text>{{item.name}}</text>
+                        <text>{{item.job__name}}</text>
+                        <text>{{item.company__name}}</text>
+                    </view>             
+              </view>
+              <view wx:else class='article'>
+                  <template is="wxParse" data="{{wxParseData:item}}"/>
+              </view>    
+        </view>
+
+        <view wx:else class='article'>
+            <template is="wxParse" data="{{wxParseData:item}}"/>
+        </view>       
+    </view>
+  </block>
+
+  <view class='hot_tag line_before'>
+    <text class='tag'  style='color:#333'>会议标签：</text>
+    <text style='display:inline-block;padding:0 5px;' wx:for="{{event.event_tag_info}}">{{item.name}}    </text>
+  </view>
+
+ <view class='rel_title'>相关会议</view>
+ <view wx:if="{{replyTemArray}}" wx:for="{{relate_events}}" class='event line_before'>
+        <view class='img'>
+          <navigator open-type='redirect' url='../event/event?id={{item.event_id}}'>
+              <image mode="widthFix" wx:if="{{item.event_img[0].urls}}" 
+              src='{{item.event_img[0].server__name}}{{item.event_img[0].urls}}'></image> 
+              <image mode="widthFix" wx:else src='https://pic.huodongjia.com/static/images/event_default.jpg'></image>  
+          </navigator>
+        </view>
+        <view class='info'>
+          <navigator open-type='redirect' url='../event/event?id={{item.event_id}}' class='name'>{{item.event_name}}</navigator>
+          <view class='addr'> 
+            <text>{{item.event_begin_time}}</text> 
+            <text>{{item.event_city_info[0].district_name}}</text>             
+          </view>
+          <!-- <view class='tags'> 
+          <text  wx:for="{{item.event_tag_info}}" wx:for-item="tag" >{{tag.name}}</text>
+          </view> -->
+        </view>
+ </view>
+
+  
+
+  <view wx:if="{{height == 0}}" bindtap='openNav' class='shortcut nav'>快捷导航</view>
+  <view wx:if="{{height == 0}}" bindtap='top' class='shortcut'>回到顶部</view>
+  <view class='bg' catchtap='closeNav' style="display:{{(height == 0) ? 'none' : 'block' }}"></view>
+  <view class='short_nav' style='height:{{height}}px'>
+        <navigator url='../index/index' open-type='switchTab'>
+        <view><image src='../images/home_1.png'></image></view>
+          首页
+        </navigator>
+        <navigator url='../list/list' open-type='switchTab'>
+          <view><image src='../images/list_1.png'></image></view>
+          精选
+        </navigator>
+        <navigator url='../order/order' open-type='switchTab'>
+          <view><image src='../images/o3.png'></image></view>
+          订单
+        </navigator>
+        <view class='close' bindtap='closeNav'><image src='../images/close.png'></image></view>
+  </view>
+
+  
+
+</scroll-view>
+<view  wx:if="{{event.event_name}}" class='footer'>
+  <!-- <form> -->
+      <button class='share' open-type='share'> <image src='../images/share.png'></image></button>
+      <text class='timeout' wx:if="{{event.event_invalid}}">已结束</text>
+      <block wx:elif="{{event.event_price_type == 6}}">
+          <form report-submit="true" bindsubmit="formSubmit">
+          <text class='timeout'  wx:if="{{!event.event_price_valid}}">报名截止</text> 
+          <button formType="submit" class='apply' data-type="0" wx:else>参会报名</button> 
+          </form>
+           <!-- <navigator url='../signup/signup?title={{event.event_id}}&type=0' class='apply'  wx:else>参会报名</navigator>  -->
+      </block>
+      <block wx:elif="{{event.event_price_type == 4}}">
+          <navigator url='../signup/signup?title={{event.event_id}}&type=1' class='apply'>免费报名</navigator> 
+      </block> 
+      <block wx:else>
+          <form report-submit="true" bindsubmit="formSubmit">
+            <button data-type="2" formType="submit" class='apply' >立即咨询</button> 
+          </form>
+          <!-- <navigator url='../signup/signup?title={{event.event_id}}&type=2' class='apply'>立即咨询</navigator>  -->
+      </block>
+  <!-- </form> -->
+</view>
+
+
+

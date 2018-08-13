@@ -1,0 +1,147 @@
+/* pages/discount/discount.wxss */
+page{
+  font-size: 14px;
+}
+.banner{
+  height: 100vh;
+  background: -webkit-linear-gradient(top, #CC3D3D, #CC817A);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.banner image{
+  width: 100%;
+}
+.content{
+  position: relative;
+  z-index: 99;
+  padding-top: 48%;
+}
+.main{
+  width: 330px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  z-index: 99;
+  margin:0 auto 30px;
+}
+.main image{
+   width: 90px;
+   margin:0 auto 30px; 
+}
+.main input{
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: #F2F2F2;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 auto;
+}
+.main .get{
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  background: -webkit-linear-gradient(top, #FFE14C, #FFAA00);
+  margin: 15px auto 30px;
+  outline: none;
+  border: none;
+  color: #262626;
+  font-size: 16px;
+}
+.line{
+  position: relative;
+  color: #262626;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.line text{
+  background: #fff;
+  padding: 0 10px;
+  position: relative;
+  z-index: 99;
+}
+.line view{
+  width: 100%;
+  border-top: 1px dashed #999999;
+  position: absolute;
+  top: 10px;
+  z-index: 9;
+}
+.rule{
+  color: #666;
+  text-align: left;
+  line-height: 25px;
+}
+
+.events{
+  background: #fff;
+  border-radius: 15px;
+}
+.title{
+  line-height: 45px;
+  color: #262626;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+.result{
+  color: #333;
+  font-size: 16px;
+  line-height: 25px;
+}
+.share{
+  border: none;
+  background: none;
+  padding: 0;
+}
+.share::after{
+    width: 0;
+    height: 0;
+}
+.yq{
+  margin-top: 20px;
+  color: #333;
+  font-size: 16px;
+}
+.frends{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+.frends view{
+  width: 50px;
+  margin: 0 10px;
+  font-size: 12px;
+}
+.frends image{
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-bottom: 10px;
+
+}
+.text{
+  line-height: 25px;
+}
+.text text{
+  color: #FF4E33;
+}
+.test_button{
+  position: absolute;
+  width: 100%;
+   height: 100%; 
+  left: 0;
+  top: 0;
+  z-index: 9;
+  opacity: 0;
+}

@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+<image class='bg' src='../images/bg3.jpg'></image>
+
+    <text class='title' style='color:#1E5152;margin-top:20px;'>一起来说一说</text>
+    <text class='title'>当年选择的什么专业，如今在做什么</text>
+    <view class='tip'>
+    <image mode='widthFix' src='../images/img_blackboard.png'></image>
+         <textarea maxlength='30'  bindinput="inputChange" value='{{text}}' placeholder-class="place" placeholder='学服装设计，现在卖衣服'></textarea> 
+        <!-- <text>30字内</text> -->
+    </view>
+    
+
+
+
+
+    <button open-type='getUserInfo'  class='btn' bindtap='post'>
+         <image class='normal' mode='widthFix' src='../images/btn1_normal.png'></image> 
+         <image class='act' mode='widthFix' src='../images/btn1_press.png'></image> 
+    </button>
+    
+    <view class='wy'>
+        <view>网友热议：</view>
+         <text wx:for="{{shi}}">-{{item}}</text> 
+    </view>
+</view>

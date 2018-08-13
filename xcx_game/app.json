@@ -1,0 +1,15 @@
+{
+  "pages":[
+    
+    "pages/base/base",
+    "pages/index/index",
+    "pages/list/list",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#203561",
+    "navigationBarTitleText": "记忆力大作战",
+    "navigationBarTextStyle":"white"
+  }
+}

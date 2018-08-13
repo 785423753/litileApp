@@ -1,0 +1,21 @@
+<view class='content'>
+  <image class='bg' src='../images/bg.jpg'></image>
+  <view class='swiper'>
+    <block wx:for="{{sub}}">
+      <view class='swiper-item {{(current > index)?"prev":""}} {{(current === index)?"current":""}}'>
+          <view class='ques'>{{index+1}}、{{item.ques}}</view>
+          <view bindtap='tap'  wx:for="{{item.ans}}"
+           wx:for-index="i" wx:for-item="ans" data-index="{{i}}"
+           class='ans {{(current === index && idx === i)?"active":""}}'
+           >{{ans}}</view>
+      </view>
+    </block>
+  </view>
+
+    <button open-type='getUserInfo' class='btn' bindtap='post'>
+        <image class='normal' mode='widthFix' src='../images/btn6_normal.png'></image>
+        <image class='act' mode='widthFix' src='../images/btn6_press.png'></image>
+    </button>
+
+    <text class='count'><text>{{current+1}}</text>/3</text>
+</view>
